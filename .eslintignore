@@ -1,0 +1,4 @@
+dist
+node_modules
+browser_extension
+tests/coverage
