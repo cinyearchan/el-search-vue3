@@ -1,23 +1,37 @@
 <template>
-  <v-app>
+  <v-app :dark="dark">
+    <p>header</p>
+
     <v-main>
-      <HelloWorld/>
+      <v-container fluid>
+        <router-view/>
+      </v-container>
+      <p>snackbar</p>
     </v-main>
+
+    <p>footer</p>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import store from '@/store'
+import { computed } from 'vue'
+import { vuexAccessors } from '@/helpers/store'
 
 export default {
   name: 'App',
 
-  components: {
-    HelloWorld,
-  },
+  setup () {
+    const isConnected = computed(() => {
+      return store.state.connection.instances.length > 0
+    })
 
-  data: () => ({
-    //
-  }),
+    const { dark } = vuexAccessors('theme', ['dark'])
+
+    return {
+      dark,
+      isConnected
+    }
+  }
 }
 </script>
