@@ -12,7 +12,7 @@
             <v-text-field
               id="query"
               v-model="q"
-              :label="$('search.form.query.label')"
+              :label="$t('search.form.query.label')"
               :messages="$t('search.form.query.messages')"
               append-icon="mdi-close"
               autofocus
@@ -33,7 +33,7 @@
 
           <v-col cols="12" sm="1">
             <v-btn id="search_submit" class="mt-4" color="primary-button" type="submit">
-              {{ $('search.form.search') }}
+              {{ $t('search.form.search') }}
             </v-btn>
           </v-col>
         </v-row>
@@ -41,10 +41,10 @@
         <v-expend-transition>
           <div v-if="searchQueryCollapsed" class="my-2 pa-2 lowered">
             <p>
-              {{ $('search.form.customize_query.heading') }}
+              {{ $t('search.form.customize_query.heading') }}
             </p>
             <p>
-              {{ $('search.form.customize_query.hint') }}
+              {{ $t('search.form.customize_query.hint') }}
             </p>
             可拉伸容器>代码编辑器
             <div class="mt-2">

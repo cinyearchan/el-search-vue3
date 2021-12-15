@@ -30,7 +30,8 @@ const router = createRouter({
       component: Setup,
       beforeEnter: (to, from, next) => {
         if (Store.state.connection.instances.length > 0) {
-          next('/')
+          // next('/')
+          next()
         } else {
           next()
         }
@@ -47,7 +48,8 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   if (!Store.state.connection.instances.length > 0 && to.name !== 'Setup') {
-    next('setup')
+    // next('setup')
+    next()
   } else {
     next()
   }
