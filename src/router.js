@@ -2,6 +2,7 @@ import { createMemoryHistory, createRouter, createWebHashHistory, createWebHisto
 
 import Home from '@/views/Home'
 import Setup from '@/views/Setup'
+import Search from '@/views/Search'
 import Store from '@/store'
 
 const base = process.env.VUE_APP_PUBLIC_PATH || '/'
@@ -34,6 +35,12 @@ const router = createRouter({
           next()
         }
       }
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search,
+      props: true
     }
   ]
 })
