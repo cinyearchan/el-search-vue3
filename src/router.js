@@ -2,6 +2,7 @@ import { createMemoryHistory, createRouter, createWebHashHistory, createWebHisto
 
 import Home from '@/views/Home'
 import Setup from '@/views/Setup'
+import Nodes from '@/views/Nodes'
 import Search from '@/views/Search'
 import Store from '@/store'
 
@@ -36,6 +37,11 @@ const router = createRouter({
           next()
         }
       }
+    },
+    {
+      path: '/nodes',
+      name: 'Nodes',
+      component: Nodes
     },
     {
       path: '/search',
