@@ -5,6 +5,7 @@ import Setup from '@/views/Setup'
 import Nodes from '@/views/Nodes'
 import Search from '@/views/Search'
 import Document from '@/views/Document'
+import Utilities from '@/views/Utilities'
 import Store from '@/store'
 
 const base = process.env.VUE_APP_PUBLIC_PATH || '/'
@@ -54,6 +55,11 @@ const router = createRouter({
       path: '/search/:index/:type?/:id',
       name: 'Document',
       component: Document
+    },
+    {
+      path: '/utilities',
+      name: 'Utilities',
+      component: Utilities
     }
   ]
 })
